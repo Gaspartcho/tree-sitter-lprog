@@ -2,4 +2,4 @@
 
 The official [tree-sitter](https://tree-sitter.github.io/tree-sitter/) grammar for the Lambda Prog (\\lprog) language.
 
-Link to the language reference: 
+Link to the language reference: [https://github.com/Gaspartcho/lambda_interpreter]
