@@ -64,6 +64,16 @@
             "named": true
           }
         ]
+      },
+      "symbol": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expr_symbol",
+            "named": true
+          }
+        ]
       }
     }
   },
@@ -372,6 +382,10 @@
     "type": "comment",
     "named": true,
     "extra": true
+  },
+  {
+    "type": "expr_symbol",
+    "named": true
   },
   {
     "type": "macro_name",

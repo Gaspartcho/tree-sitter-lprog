@@ -34,7 +34,7 @@ enum ts_symbol_identifiers {
   sym_var_name = 12,
   sym_macro_name = 13,
   sym_string = 14,
-  sym__expr_symbol = 15,
+  sym_expr_symbol = 15,
   sym_source_file = 16,
   sym__element = 17,
   sym__macro = 18,
@@ -70,7 +70,7 @@ static const char * const ts_symbol_names[] = {
   [sym_var_name] = "var_name",
   [sym_macro_name] = "macro_name",
   [sym_string] = "string",
-  [sym__expr_symbol] = "_expr_symbol",
+  [sym_expr_symbol] = "expr_symbol",
   [sym_source_file] = "source_file",
   [sym__element] = "_element",
   [sym__macro] = "_macro",
@@ -106,7 +106,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_var_name] = sym_var_name,
   [sym_macro_name] = sym_macro_name,
   [sym_string] = sym_string,
-  [sym__expr_symbol] = sym__expr_symbol,
+  [sym_expr_symbol] = sym_expr_symbol,
   [sym_source_file] = sym_source_file,
   [sym__element] = sym__element,
   [sym__macro] = sym__macro,
@@ -187,8 +187,8 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym__expr_symbol] = {
-    .visible = false,
+  [sym_expr_symbol] = {
+    .visible = true,
     .named = true,
   },
   [sym_source_file] = {
@@ -570,7 +570,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '"') ADVANCE(32);
       END_STATE();
     case 33:
-      ACCEPT_TOKEN(sym__expr_symbol);
+      ACCEPT_TOKEN(sym_expr_symbol);
       END_STATE();
     default:
       return false;
@@ -649,7 +649,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_var_name] = ACTIONS(1),
     [sym_macro_name] = ACTIONS(1),
     [sym_string] = ACTIONS(1),
-    [sym__expr_symbol] = ACTIONS(1),
+    [sym_expr_symbol] = ACTIONS(1),
   },
   [STATE(1)] = {
     [sym_source_file] = STATE(48),
@@ -676,7 +676,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(17),
     [sym_var_name] = ACTIONS(19),
     [sym_macro_name] = ACTIONS(21),
-    [sym__expr_symbol] = ACTIONS(23),
+    [sym_expr_symbol] = ACTIONS(23),
   },
   [STATE(2)] = {
     [sym__element] = STATE(2),
@@ -703,7 +703,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(17),
     [sym_var_name] = ACTIONS(44),
     [sym_macro_name] = ACTIONS(47),
-    [sym__expr_symbol] = ACTIONS(50),
+    [sym_expr_symbol] = ACTIONS(50),
   },
   [STATE(3)] = {
     [sym__element] = STATE(2),
@@ -729,7 +729,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(17),
     [sym_var_name] = ACTIONS(19),
     [sym_macro_name] = ACTIONS(21),
-    [sym__expr_symbol] = ACTIONS(23),
+    [sym_expr_symbol] = ACTIONS(23),
   },
   [STATE(4)] = {
     [sym__element] = STATE(2),
@@ -755,7 +755,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(17),
     [sym_var_name] = ACTIONS(19),
     [sym_macro_name] = ACTIONS(21),
-    [sym__expr_symbol] = ACTIONS(23),
+    [sym_expr_symbol] = ACTIONS(23),
   },
   [STATE(5)] = {
     [sym__element] = STATE(4),
@@ -781,7 +781,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(17),
     [sym_var_name] = ACTIONS(19),
     [sym_macro_name] = ACTIONS(21),
-    [sym__expr_symbol] = ACTIONS(23),
+    [sym_expr_symbol] = ACTIONS(23),
   },
 };
 
@@ -798,7 +798,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(21), 1,
       sym_macro_name,
     ACTIONS(23), 1,
-      sym__expr_symbol,
+      sym_expr_symbol,
     STATE(10), 3,
       sym__expression,
       sym_expression,
@@ -823,7 +823,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_LPAREN,
       sym_var_name,
       sym_macro_name,
-      sym__expr_symbol,
+      sym_expr_symbol,
   [49] = 3,
     ACTIONS(17), 1,
       sym_comment,
@@ -838,7 +838,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_LPAREN,
       sym_var_name,
       sym_macro_name,
-      sym__expr_symbol,
+      sym_expr_symbol,
   [67] = 3,
     ACTIONS(17), 1,
       sym_comment,
@@ -853,7 +853,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_LPAREN,
       sym_var_name,
       sym_macro_name,
-      sym__expr_symbol,
+      sym_expr_symbol,
   [85] = 3,
     ACTIONS(17), 1,
       sym_comment,
@@ -868,7 +868,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_LPAREN,
       sym_var_name,
       sym_macro_name,
-      sym__expr_symbol,
+      sym_expr_symbol,
   [103] = 3,
     ACTIONS(17), 1,
       sym_comment,
@@ -883,7 +883,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_LPAREN,
       sym_var_name,
       sym_macro_name,
-      sym__expr_symbol,
+      sym_expr_symbol,
   [121] = 3,
     ACTIONS(17), 1,
       sym_comment,
@@ -898,7 +898,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_LPAREN,
       sym_var_name,
       sym_macro_name,
-      sym__expr_symbol,
+      sym_expr_symbol,
   [139] = 3,
     ACTIONS(17), 1,
       sym_comment,
@@ -913,7 +913,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_LPAREN,
       sym_var_name,
       sym_macro_name,
-      sym__expr_symbol,
+      sym_expr_symbol,
   [157] = 3,
     ACTIONS(17), 1,
       sym_comment,
@@ -928,7 +928,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_LPAREN,
       sym_var_name,
       sym_macro_name,
-      sym__expr_symbol,
+      sym_expr_symbol,
   [175] = 3,
     ACTIONS(17), 1,
       sym_comment,
@@ -943,7 +943,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_LPAREN,
       sym_var_name,
       sym_macro_name,
-      sym__expr_symbol,
+      sym_expr_symbol,
   [193] = 3,
     ACTIONS(17), 1,
       sym_comment,
@@ -958,7 +958,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_LPAREN,
       sym_var_name,
       sym_macro_name,
-      sym__expr_symbol,
+      sym_expr_symbol,
   [211] = 3,
     ACTIONS(17), 1,
       sym_comment,
@@ -973,7 +973,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_LPAREN,
       sym_var_name,
       sym_macro_name,
-      sym__expr_symbol,
+      sym_expr_symbol,
   [229] = 6,
     ACTIONS(13), 1,
       anon_sym_BSLASH,
