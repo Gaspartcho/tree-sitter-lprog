@@ -121,6 +121,10 @@
         {
           "type": "include_statement",
           "named": true
+        },
+        {
+          "type": "macro_name",
+          "named": true
         }
       ]
     }
@@ -259,10 +263,6 @@
         "required": true,
         "types": [
           {
-            "type": ",",
-            "named": false
-          },
-          {
             "type": "l_variable",
             "named": true
           }
@@ -325,6 +325,10 @@
         },
         {
           "type": "include_statement",
+          "named": true
+        },
+        {
+          "type": "macro_name",
           "named": true
         }
       ]

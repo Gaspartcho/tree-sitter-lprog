@@ -24,7 +24,8 @@ module.exports = grammar({
       $.expression,
       $.global_macro,
       $.code_macro,
-      $.include_statement
+      $.include_statement,
+      $.macro_name
     ),
 
     global_macro: $ => seq(
@@ -67,12 +68,12 @@ module.exports = grammar({
 
     l_function: $ => seq(
       "\\",
-      field("variable", seq(
+      seq(
         repeat(seq(
-          $.l_variable,
+          field("variable", $.l_variable),
           ","
         )),
-        $.l_variable,)
+        field("variable", $.l_variable)
       ),
       ".",
       field("body", $._l_expression)

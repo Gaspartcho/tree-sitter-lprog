@@ -27,6 +27,10 @@
         {
           "type": "SYMBOL",
           "name": "include_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "macro_name"
         }
       ]
     },
@@ -195,33 +199,37 @@
           "value": "\\"
         },
         {
-          "type": "FIELD",
-          "name": "variable",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SEQ",
-                  "members": [
-                    {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "FIELD",
+                    "name": "variable",
+                    "content": {
                       "type": "SYMBOL",
                       "name": "l_variable"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": ","
                     }
-                  ]
-                }
-              },
-              {
+                  },
+                  {
+                    "type": "STRING",
+                    "value": ","
+                  }
+                ]
+              }
+            },
+            {
+              "type": "FIELD",
+              "name": "variable",
+              "content": {
                 "type": "SYMBOL",
                 "name": "l_variable"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "type": "STRING",
