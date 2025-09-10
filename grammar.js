@@ -108,8 +108,8 @@ module.exports = grammar({
       ),
     )),
 
-    _var_name: $ => /[a-z_]+/,
-    _macro_name: $ => /[A-Z_]+/,
-    _string: $ => /"*"/,
+    var_name: $ => /[a-z_]+/,
+    macro_name: $ => /[A-Z_]+/,
+    string: $ => /"*"/,
   }
 });
