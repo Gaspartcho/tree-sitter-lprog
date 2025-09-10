@@ -32,7 +32,7 @@ module.exports = grammar({
     ),
 
     global_macro: $ => seq(
-      field("symbol", "%"),
+      field("symbol", $.macro_symbol),
       field("name", $.macro_name),
       "[",
       repeat($._element),
@@ -40,13 +40,13 @@ module.exports = grammar({
     ),
 
     code_macro: $ => seq(
-      field("symbol", "@"),
+      field("symbol", $.macro_symbol),
       field("name", $.macro_name),
       field("body", $._l_expression)
     ),
 
     include_statement: $ => seq(
-      field("symbol", "*"),
+      field("symbol", $.macro_symbol),
       field("file_name", $.string)
     ),
 
@@ -112,5 +112,6 @@ module.exports = grammar({
     macro_name: $ => /[A-Z_]+/,
     string: $ => /"*"/,
     expr_symbol: $ => /[#$&]/,
+    macro_symbol: $ => /[%@*]/
   }
 });

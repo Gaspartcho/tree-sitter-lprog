@@ -40,8 +40,8 @@
         "required": true,
         "types": [
           {
-            "type": "@",
-            "named": false
+            "type": "macro_symbol",
+            "named": true
           }
         ]
       }
@@ -96,8 +96,8 @@
         "required": true,
         "types": [
           {
-            "type": "%",
-            "named": false
+            "type": "macro_symbol",
+            "named": true
           }
         ]
       }
@@ -148,8 +148,8 @@
         "required": true,
         "types": [
           {
-            "type": "*",
-            "named": false
+            "type": "macro_symbol",
+            "named": true
           }
         ]
       }
@@ -339,10 +339,6 @@
     }
   },
   {
-    "type": "%",
-    "named": false
-  },
-  {
     "type": "(",
     "named": false
   },
@@ -351,19 +347,11 @@
     "named": false
   },
   {
-    "type": "*",
-    "named": false
-  },
-  {
     "type": ",",
     "named": false
   },
   {
     "type": ".",
-    "named": false
-  },
-  {
-    "type": "@",
     "named": false
   },
   {
@@ -389,6 +377,10 @@
   },
   {
     "type": "macro_name",
+    "named": true
+  },
+  {
+    "type": "macro_symbol",
     "named": true
   },
   {

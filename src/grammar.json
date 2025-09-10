@@ -46,8 +46,8 @@
           "type": "FIELD",
           "name": "symbol",
           "content": {
-            "type": "STRING",
-            "value": "%"
+            "type": "SYMBOL",
+            "name": "macro_symbol"
           }
         },
         {
@@ -82,8 +82,8 @@
           "type": "FIELD",
           "name": "symbol",
           "content": {
-            "type": "STRING",
-            "value": "@"
+            "type": "SYMBOL",
+            "name": "macro_symbol"
           }
         },
         {
@@ -111,8 +111,8 @@
           "type": "FIELD",
           "name": "symbol",
           "content": {
-            "type": "STRING",
-            "value": "*"
+            "type": "SYMBOL",
+            "name": "macro_symbol"
           }
         },
         {
@@ -344,6 +344,10 @@
     "expr_symbol": {
       "type": "PATTERN",
       "value": "[#$&]"
+    },
+    "macro_symbol": {
+      "type": "PATTERN",
+      "value": "[%@*]"
     }
   },
   "extras": [
