@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "lprog",
+      "camelcase": "LProg",
+      "title": "Lambda Prog",
+      "scope": "source.lprog",
+      "file-types": [
+        "lp"
+      ],
+      "injection-regex": "^lprog$",
+      "class-name": "TreeSitterLprog"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "The official tree-sitter grammar for the Lambda Prog (\\lprog) language.",
+    "authors": [
+      {
+        "name": "Gaspartcho",
+        "email": "g.deremble@laposte.net"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/Gaspartcho/tree-sitter-lprog"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
