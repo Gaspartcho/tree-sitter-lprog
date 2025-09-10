@@ -56,7 +56,7 @@ module.exports = grammar({
     ),
 
     expression: $ => seq(
-      field("symbol", /[#$&]/),
+      field("symbol", $._expr_symbol),
       field("body", $._expression)
     ),
 
@@ -85,10 +85,10 @@ module.exports = grammar({
     l_application: $ => seq(
       "(",
       field("function", $._l_expression),
-      field("arg", repeat1(seq(
+      repeat1(seq(
         ",",
-        $._l_expression
-      ))),
+        field("arg", $._l_expression)
+      )),
       ")"
     ),
 
@@ -111,5 +111,6 @@ module.exports = grammar({
     var_name: $ => /[a-z_]+/,
     macro_name: $ => /[A-Z_]+/,
     string: $ => /"*"/,
+    _expr_symbol: $ => /[#$&]/,
   }
 });

@@ -154,10 +154,6 @@
         "required": true,
         "types": [
           {
-            "type": ",",
-            "named": false
-          },
-          {
             "type": "l_application",
             "named": true
           },
