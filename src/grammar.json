@@ -339,7 +339,7 @@
     },
     "string": {
       "type": "PATTERN",
-      "value": "\".*\""
+      "value": "\"[a-zA-Z0-9/]*\""
     },
     "expr_symbol": {
       "type": "PATTERN",
