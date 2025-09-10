@@ -51,7 +51,7 @@ module.exports = grammar({
       $.expression
     ),
 
-    expression: $ => prec.left(seq(
+    expression: $ => prec.right(seq(
       field("symbol", $.expr_symbol),
       optional(field("body", $._expression))
     )),
