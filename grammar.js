@@ -21,11 +21,7 @@ module.exports = grammar({
     source_file: $ => repeat($._element),
 
     _element: $ => choice(
-      $._expression,
-      $._macro,
-    ),
-
-    _macro: $ => choice(
+      $.expression,
       $.global_macro,
       $.code_macro,
       $.include_statement

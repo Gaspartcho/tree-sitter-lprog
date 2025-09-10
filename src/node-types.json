@@ -121,10 +121,6 @@
         {
           "type": "include_statement",
           "named": true
-        },
-        {
-          "type": "l_expression",
-          "named": true
         }
       ]
     }
@@ -329,10 +325,6 @@
         },
         {
           "type": "include_statement",
-          "named": true
-        },
-        {
-          "type": "l_expression",
           "named": true
         }
       ]

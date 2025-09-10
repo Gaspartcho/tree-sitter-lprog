@@ -19,3 +19,12 @@ ddwdw*/
 
 
 /*dw*/ /**/
+
+
+% TEST [# $ & ]
+
+TEST TRUE
+
+
+// ye
+* "test"

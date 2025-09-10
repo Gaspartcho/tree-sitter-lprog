@@ -14,17 +14,8 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_expression"
+          "name": "expression"
         },
-        {
-          "type": "SYMBOL",
-          "name": "_macro"
-        }
-      ]
-    },
-    "_macro": {
-      "type": "CHOICE",
-      "members": [
         {
           "type": "SYMBOL",
           "name": "global_macro"
