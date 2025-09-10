@@ -339,7 +339,7 @@
     },
     "string": {
       "type": "PATTERN",
-      "value": "\"*\""
+      "value": "\".*\""
     },
     "expr_symbol": {
       "type": "PATTERN",

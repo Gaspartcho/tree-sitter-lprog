@@ -110,7 +110,7 @@ module.exports = grammar({
 
     var_name: $ => /[a-z_]+/,
     macro_name: $ => /[A-Z_]+/,
-    string: $ => /"*"/,
+    string: $ => /".*"/,
     expr_symbol: $ => /[#$&]/,
     macro_symbol: $ => /[%@*]/
   }
