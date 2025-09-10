@@ -21,9 +21,9 @@ ddwdw*/
 /*dw*/ /**/
 
 
-% TEST [# $ & ]
+% TEST [# $ &]
 
-TEST TRUE
+TEST (TRUE, FALSE)
 
 
 // ye

@@ -25,12 +25,12 @@ module.exports = grammar({
       $.global_macro,
       $.code_macro,
       $.include_statement,
-      $.macro_name
+      $.macro_expr
     ),
 
     global_macro: $ => seq(
       field("symbol", $.macro_symbol),
-      field("name", $.macro_name),
+      field("name", $.g_macro_name),
       "[",
       repeat($._element),
       "]"
@@ -38,13 +38,21 @@ module.exports = grammar({
 
     code_macro: $ => seq(
       field("symbol", $.macro_symbol),
-      field("name", $.macro_name),
+      field("name", $.c_macro_name),
       field("body", $._l_expression)
     ),
 
     include_statement: $ => seq(
       field("symbol", $.macro_symbol),
       field("file_name", $.string)
+    ),
+
+    macro_expr: $ => seq(
+      field("name", $.g_macro_name),
+      choice(
+        ";",
+        field("arg", $._expression)
+      )
     ),
 
     _expression: $ => choice(
@@ -54,7 +62,7 @@ module.exports = grammar({
 
     expression: $ => prec.right(seq(
       field("symbol", $.expr_symbol),
-      optional(field("body", $._expression))
+      optional(field("arg", $._expression))
     )),
 
     l_expression: $ => $._l_expression,
@@ -91,7 +99,7 @@ module.exports = grammar({
 
     l_variable: $ => field("name", $.var_name),
 
-    l_macro: $ => field("name", $.macro_name),
+    l_macro: $ => field("name", $.c_macro_name),
 
 
     // Taken from the c grammar
@@ -106,7 +114,8 @@ module.exports = grammar({
     )),
 
     var_name: $ => /[a-z_]+/,
-    macro_name: $ => /[A-Z_]+/,
+    c_macro_name: $ => /[A-Z][A-Z_]*/,
+    g_macro_name: $ => /_[A-Z_]+/,
     string: $ => /"[a-zA-Z0-9/]*"/,
     expr_symbol: $ => /[#$&]/,
     macro_symbol: $ => /[%@*]/

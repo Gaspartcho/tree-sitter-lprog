@@ -30,7 +30,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "macro_name"
+          "name": "macro_expr"
         }
       ]
     },
@@ -50,7 +50,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "macro_name"
+            "name": "g_macro_name"
           }
         },
         {
@@ -86,7 +86,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "macro_name"
+            "name": "c_macro_name"
           }
         },
         {
@@ -117,6 +117,36 @@
             "type": "SYMBOL",
             "name": "string"
           }
+        }
+      ]
+    },
+    "macro_expr": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "g_macro_name"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ";"
+            },
+            {
+              "type": "FIELD",
+              "name": "arg",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_expression"
+              }
+            }
+          ]
         }
       ]
     },
@@ -152,7 +182,7 @@
             "members": [
               {
                 "type": "FIELD",
-                "name": "body",
+                "name": "arg",
                 "content": {
                   "type": "SYMBOL",
                   "name": "_expression"
@@ -299,7 +329,7 @@
       "name": "name",
       "content": {
         "type": "SYMBOL",
-        "name": "macro_name"
+        "name": "c_macro_name"
       }
     },
     "comment": {
@@ -344,9 +374,13 @@
       "type": "PATTERN",
       "value": "[a-z_]+"
     },
-    "macro_name": {
+    "c_macro_name": {
       "type": "PATTERN",
-      "value": "[A-Z_]+"
+      "value": "[A-Z][A-Z_]*"
+    },
+    "g_macro_name": {
+      "type": "PATTERN",
+      "value": "_[A-Z_]+"
     },
     "string": {
       "type": "PATTERN",

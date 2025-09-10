@@ -30,7 +30,7 @@
         "required": true,
         "types": [
           {
-            "type": "macro_name",
+            "type": "c_macro_name",
             "named": true
           }
         ]
@@ -51,7 +51,7 @@
     "type": "expression",
     "named": true,
     "fields": {
-      "body": {
+      "arg": {
         "multiple": false,
         "required": false,
         "types": [
@@ -86,7 +86,7 @@
         "required": true,
         "types": [
           {
-            "type": "macro_name",
+            "type": "g_macro_name",
             "named": true
           }
         ]
@@ -123,7 +123,7 @@
           "named": true
         },
         {
-          "type": "macro_name",
+          "type": "macro_expr",
           "named": true
         }
       ]
@@ -279,7 +279,7 @@
         "required": true,
         "types": [
           {
-            "type": "macro_name",
+            "type": "c_macro_name",
             "named": true
           }
         ]
@@ -296,6 +296,36 @@
         "types": [
           {
             "type": "var_name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "macro_expr",
+    "named": true,
+    "fields": {
+      "arg": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          },
+          {
+            "type": "l_expression",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "g_macro_name",
             "named": true
           }
         ]
@@ -328,7 +358,7 @@
           "named": true
         },
         {
-          "type": "macro_name",
+          "type": "macro_expr",
           "named": true
         }
       ]
@@ -351,6 +381,10 @@
     "named": false
   },
   {
+    "type": ";",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
@@ -363,6 +397,10 @@
     "named": false
   },
   {
+    "type": "c_macro_name",
+    "named": true
+  },
+  {
     "type": "comment",
     "named": true,
     "extra": true
@@ -372,7 +410,7 @@
     "named": true
   },
   {
-    "type": "macro_name",
+    "type": "g_macro_name",
     "named": true
   },
   {
