@@ -55,7 +55,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "_macro_name"
+            "name": "macro_name"
           }
         },
         {
@@ -91,7 +91,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "_macro_name"
+            "name": "macro_name"
           }
         },
         {
@@ -120,7 +120,7 @@
           "name": "file_name",
           "content": {
             "type": "SYMBOL",
-            "name": "_string"
+            "name": "string"
           }
         }
       ]
@@ -280,7 +280,7 @@
       "name": "name",
       "content": {
         "type": "SYMBOL",
-        "name": "_var_name"
+        "name": "var_name"
       }
     },
     "l_macro": {
@@ -288,7 +288,7 @@
       "name": "name",
       "content": {
         "type": "SYMBOL",
-        "name": "_macro_name"
+        "name": "macro_name"
       }
     },
     "comment": {
@@ -329,15 +329,15 @@
         ]
       }
     },
-    "_var_name": {
+    "var_name": {
       "type": "PATTERN",
       "value": "[a-z_]+"
     },
-    "_macro_name": {
+    "macro_name": {
       "type": "PATTERN",
       "value": "[A-Z_]+"
     },
-    "_string": {
+    "string": {
       "type": "PATTERN",
       "value": "\"*\""
     }

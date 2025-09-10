@@ -25,6 +25,16 @@
           }
         ]
       },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "macro_name",
+            "named": true
+          }
+        ]
+      },
       "symbol": {
         "multiple": false,
         "required": true,
@@ -61,6 +71,16 @@
     "type": "global_macro",
     "named": true,
     "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "macro_name",
+            "named": true
+          }
+        ]
+      },
       "symbol": {
         "multiple": false,
         "required": true,
@@ -103,6 +123,16 @@
     "type": "include_statement",
     "named": true,
     "fields": {
+      "file_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
       "symbol": {
         "multiple": false,
         "required": true,
@@ -241,12 +271,34 @@
   {
     "type": "l_macro",
     "named": true,
-    "fields": {}
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "macro_name",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "l_variable",
     "named": true,
-    "fields": {}
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "var_name",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "source_file",
@@ -324,5 +376,17 @@
     "type": "comment",
     "named": true,
     "extra": true
+  },
+  {
+    "type": "macro_name",
+    "named": true
+  },
+  {
+    "type": "string",
+    "named": true
+  },
+  {
+    "type": "var_name",
+    "named": true
   }
 ]

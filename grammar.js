@@ -33,7 +33,7 @@ module.exports = grammar({
 
     global_macro: $ => seq(
       field("symbol", "%"),
-      field("name", $._macro_name),
+      field("name", $.macro_name),
       "[",
       repeat($._element),
       "]"
@@ -41,13 +41,13 @@ module.exports = grammar({
 
     code_macro: $ => seq(
       field("symbol", "@"),
-      field("name", $._macro_name),
+      field("name", $.macro_name),
       field("body", $._l_expression)
     ),
 
     include_statement: $ => seq(
       field("symbol", "*"),
-      field("file_name", $._string)
+      field("file_name", $.string)
     ),
 
     _expression: $ => choice(
@@ -92,9 +92,9 @@ module.exports = grammar({
       ")"
     ),
 
-    l_variable: $ => field("name", $._var_name),
+    l_variable: $ => field("name", $.var_name),
 
-    l_macro: $ => field("name", $._macro_name),
+    l_macro: $ => field("name", $.macro_name),
 
 
     // Taken from the c grammar
