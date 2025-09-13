@@ -27,7 +27,8 @@ module.exports = grammar({
       $.application,
       $.variable,
       $.macro,
-      $.directive
+      $.directive,
+      $.string
     ),
 
     function: $ => seq(

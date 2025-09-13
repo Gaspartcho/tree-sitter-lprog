@@ -24,6 +24,10 @@
             "named": true
           },
           {
+            "type": "string",
+            "named": true
+          },
+          {
             "type": "variable",
             "named": true
           }
@@ -47,6 +51,10 @@
           },
           {
             "type": "macro",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -79,6 +87,10 @@
           },
           {
             "type": "macro",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -125,6 +137,10 @@
           "named": true
         },
         {
+          "type": "string",
+          "named": true
+        },
+        {
           "type": "variable",
           "named": true
         }
@@ -162,6 +178,10 @@
   },
   {
     "type": "macro",
+    "named": true
+  },
+  {
+    "type": "string",
     "named": true
   },
   {
