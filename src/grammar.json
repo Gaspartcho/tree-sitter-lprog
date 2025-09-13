@@ -131,7 +131,7 @@
     },
     "comment": {
       "type": "PATTERN",
-      "value": "[\\%[^\\%]*\\%]"
+      "value": "%[^%]%"
     },
     "variable": {
       "type": "PATTERN",
