@@ -1,3 +1,4 @@
 (TEST, TEST, #, TEST)
 
-\a. b
+(@, TRUE, \a, b. a)
+(@, FALSE, \a, b. b)

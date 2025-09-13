@@ -66,6 +66,12 @@
     }
   },
   {
+    "type": "comment",
+    "named": true,
+    "extra": true,
+    "fields": {}
+  },
+  {
     "type": "function",
     "named": true,
     "fields": {
@@ -148,6 +154,10 @@
     }
   },
   {
+    "type": "%",
+    "named": false
+  },
+  {
     "type": "(",
     "named": false
   },
@@ -166,11 +176,6 @@
   {
     "type": "\\",
     "named": false
-  },
-  {
-    "type": "comment",
-    "named": true,
-    "extra": true
   },
   {
     "type": "directive",

@@ -56,7 +56,7 @@ module.exports = grammar({
 
     // Taken from the c grammar
     // http://stackoverflow.com/questions/13014947/regex-to-match-a-c-style-multiline-comment/36328890#36328890
-    comment: $ => /%[^%]%/,
+    comment: $ => seq("%", repeat(/[^%]/), "%"),
 
     variable: $ => /[a-z_]+/,
     macro: $ => /[A-Z_]+/,
