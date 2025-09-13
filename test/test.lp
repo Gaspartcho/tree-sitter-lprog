@@ -8,7 +8,7 @@
 // test
 
 
-# $ & (TRUE, FALSE)
+# $ & (TRUE, FALSE, TRUE)
 
 /*
 ddwdw
@@ -21,9 +21,11 @@ ddwdw*/
 /*dw*/ /**/
 
 
-% TEST [# $ &]
+% _TEST [# $ &]
 
-TEST (TRUE, FALSE)
+_TEST # # (TRUE, FALSE)
+
+_TEST;
 
 
 // ye

@@ -1,162 +1,6 @@
 [
   {
-    "type": "code_macro",
-    "named": true,
-    "fields": {
-      "body": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "l_application",
-            "named": true
-          },
-          {
-            "type": "l_function",
-            "named": true
-          },
-          {
-            "type": "l_macro",
-            "named": true
-          },
-          {
-            "type": "l_variable",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "c_macro_name",
-            "named": true
-          }
-        ]
-      },
-      "symbol": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "macro_symbol",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "expression",
-    "named": true,
-    "fields": {
-      "arg": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "expression",
-            "named": true
-          },
-          {
-            "type": "l_expression",
-            "named": true
-          }
-        ]
-      },
-      "symbol": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "expr_symbol",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "global_macro",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "g_macro_name",
-            "named": true
-          }
-        ]
-      },
-      "symbol": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "macro_symbol",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "code_macro",
-          "named": true
-        },
-        {
-          "type": "expression",
-          "named": true
-        },
-        {
-          "type": "global_macro",
-          "named": true
-        },
-        {
-          "type": "include_statement",
-          "named": true
-        },
-        {
-          "type": "macro_expr",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "include_statement",
-    "named": true,
-    "fields": {
-      "file_name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "string",
-            "named": true
-          }
-        ]
-      },
-      "symbol": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "macro_symbol",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "l_application",
+    "type": "application",
     "named": true,
     "fields": {
       "arg": {
@@ -164,19 +8,23 @@
         "required": true,
         "types": [
           {
-            "type": "l_application",
+            "type": "application",
             "named": true
           },
           {
-            "type": "l_function",
+            "type": "directive",
             "named": true
           },
           {
-            "type": "l_macro",
+            "type": "function",
             "named": true
           },
           {
-            "type": "l_variable",
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "variable",
             "named": true
           }
         ]
@@ -186,19 +34,23 @@
         "required": true,
         "types": [
           {
-            "type": "l_application",
+            "type": "application",
             "named": true
           },
           {
-            "type": "l_function",
+            "type": "directive",
             "named": true
           },
           {
-            "type": "l_macro",
+            "type": "function",
             "named": true
           },
           {
-            "type": "l_variable",
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "variable",
             "named": true
           }
         ]
@@ -206,34 +58,7 @@
     }
   },
   {
-    "type": "l_expression",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "l_application",
-          "named": true
-        },
-        {
-          "type": "l_function",
-          "named": true
-        },
-        {
-          "type": "l_macro",
-          "named": true
-        },
-        {
-          "type": "l_variable",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "l_function",
+    "type": "function",
     "named": true,
     "fields": {
       "body": {
@@ -241,19 +66,23 @@
         "required": true,
         "types": [
           {
-            "type": "l_application",
+            "type": "application",
             "named": true
           },
           {
-            "type": "l_function",
+            "type": "directive",
             "named": true
           },
           {
-            "type": "l_macro",
+            "type": "function",
             "named": true
           },
           {
-            "type": "l_variable",
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "variable",
             "named": true
           }
         ]
@@ -263,69 +92,7 @@
         "required": true,
         "types": [
           {
-            "type": "l_variable",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "l_macro",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "c_macro_name",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "l_variable",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "var_name",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "macro_expr",
-    "named": true,
-    "fields": {
-      "arg": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "expression",
-            "named": true
-          },
-          {
-            "type": "l_expression",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "g_macro_name",
+            "type": "variable",
             "named": true
           }
         ]
@@ -342,23 +109,23 @@
       "required": false,
       "types": [
         {
-          "type": "code_macro",
+          "type": "application",
           "named": true
         },
         {
-          "type": "expression",
+          "type": "directive",
           "named": true
         },
         {
-          "type": "global_macro",
+          "type": "function",
           "named": true
         },
         {
-          "type": "include_statement",
+          "type": "macro",
           "named": true
         },
         {
-          "type": "macro_expr",
+          "type": "variable",
           "named": true
         }
       ]
@@ -381,24 +148,8 @@
     "named": false
   },
   {
-    "type": ";",
-    "named": false
-  },
-  {
-    "type": "[",
-    "named": false
-  },
-  {
     "type": "\\",
     "named": false
-  },
-  {
-    "type": "]",
-    "named": false
-  },
-  {
-    "type": "c_macro_name",
-    "named": true
   },
   {
     "type": "comment",
@@ -406,23 +157,15 @@
     "extra": true
   },
   {
-    "type": "expr_symbol",
+    "type": "directive",
     "named": true
   },
   {
-    "type": "g_macro_name",
+    "type": "macro",
     "named": true
   },
   {
-    "type": "macro_symbol",
-    "named": true
-  },
-  {
-    "type": "string",
-    "named": true
-  },
-  {
-    "type": "var_name",
+    "type": "variable",
     "named": true
   }
 ]

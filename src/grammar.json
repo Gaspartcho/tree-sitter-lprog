@@ -6,222 +6,35 @@
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "_element"
+        "name": "_expression"
       }
-    },
-    "_element": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "global_macro"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "code_macro"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "include_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "macro_expr"
-        }
-      ]
-    },
-    "global_macro": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "symbol",
-          "content": {
-            "type": "SYMBOL",
-            "name": "macro_symbol"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "SYMBOL",
-            "name": "g_macro_name"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "["
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_element"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "]"
-        }
-      ]
-    },
-    "code_macro": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "symbol",
-          "content": {
-            "type": "SYMBOL",
-            "name": "macro_symbol"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "SYMBOL",
-            "name": "c_macro_name"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "body",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_l_expression"
-          }
-        }
-      ]
-    },
-    "include_statement": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "symbol",
-          "content": {
-            "type": "SYMBOL",
-            "name": "macro_symbol"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "file_name",
-          "content": {
-            "type": "SYMBOL",
-            "name": "string"
-          }
-        }
-      ]
-    },
-    "macro_expr": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "SYMBOL",
-            "name": "g_macro_name"
-          }
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": ";"
-            },
-            {
-              "type": "FIELD",
-              "name": "arg",
-              "content": {
-                "type": "SYMBOL",
-                "name": "_expression"
-              }
-            }
-          ]
-        }
-      ]
     },
     "_expression": {
       "type": "CHOICE",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "l_expression"
+          "name": "function"
         },
         {
           "type": "SYMBOL",
-          "name": "expression"
+          "name": "application"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "variable"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "macro"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "directive"
         }
       ]
     },
-    "expression": {
-      "type": "PREC_RIGHT",
-      "value": 0,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "symbol",
-            "content": {
-              "type": "SYMBOL",
-              "name": "expr_symbol"
-            }
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "FIELD",
-                "name": "arg",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_expression"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "l_expression": {
-      "type": "SYMBOL",
-      "name": "_l_expression"
-    },
-    "_l_expression": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "l_function"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "l_application"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "l_variable"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "l_macro"
-        }
-      ]
-    },
-    "l_function": {
+    "function": {
       "type": "SEQ",
       "members": [
         {
@@ -241,7 +54,7 @@
                     "name": "variable",
                     "content": {
                       "type": "SYMBOL",
-                      "name": "l_variable"
+                      "name": "variable"
                     }
                   },
                   {
@@ -256,7 +69,7 @@
               "name": "variable",
               "content": {
                 "type": "SYMBOL",
-                "name": "l_variable"
+                "name": "variable"
               }
             }
           ]
@@ -270,12 +83,12 @@
           "name": "body",
           "content": {
             "type": "SYMBOL",
-            "name": "_l_expression"
+            "name": "_expression"
           }
         }
       ]
     },
-    "l_application": {
+    "application": {
       "type": "SEQ",
       "members": [
         {
@@ -287,7 +100,7 @@
           "name": "function",
           "content": {
             "type": "SYMBOL",
-            "name": "_l_expression"
+            "name": "_expression"
           }
         },
         {
@@ -304,7 +117,7 @@
                 "name": "arg",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "_l_expression"
+                  "name": "_expression"
                 }
               }
             ]
@@ -316,83 +129,25 @@
         }
       ]
     },
-    "l_variable": {
-      "type": "FIELD",
-      "name": "name",
-      "content": {
-        "type": "SYMBOL",
-        "name": "var_name"
-      }
-    },
-    "l_macro": {
-      "type": "FIELD",
-      "name": "name",
-      "content": {
-        "type": "SYMBOL",
-        "name": "c_macro_name"
-      }
-    },
     "comment": {
-      "type": "TOKEN",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "//"
-              },
-              {
-                "type": "PATTERN",
-                "value": "(\\\\+(.|\\r?\\n)|[^\\\\\\n])*"
-              }
-            ]
-          },
-          {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "/*"
-              },
-              {
-                "type": "PATTERN",
-                "value": "[^*]*\\*+([^/*][^*]*\\*+)*"
-              },
-              {
-                "type": "STRING",
-                "value": "/"
-              }
-            ]
-          }
-        ]
-      }
+      "type": "PATTERN",
+      "value": "[%[^%]*%]"
     },
-    "var_name": {
+    "variable": {
       "type": "PATTERN",
       "value": "[a-z_]+"
     },
-    "c_macro_name": {
+    "macro": {
       "type": "PATTERN",
-      "value": "[A-Z][A-Z_]*"
-    },
-    "g_macro_name": {
-      "type": "PATTERN",
-      "value": "_[A-Z_]+"
+      "value": "[A-Z_]+"
     },
     "string": {
       "type": "PATTERN",
-      "value": "\"[a-zA-Z0-9/]*\""
+      "value": "\"[^\"]*\""
     },
-    "expr_symbol": {
+    "directive": {
       "type": "PATTERN",
-      "value": "[#$&]"
-    },
-    "macro_symbol": {
-      "type": "PATTERN",
-      "value": "[%@*]"
+      "value": "[#$&@*]"
     }
   },
   "extras": [
