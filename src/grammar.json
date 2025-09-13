@@ -167,7 +167,7 @@
     },
     "directive": {
       "type": "PATTERN",
-      "value": "[#$&@*]"
+      "value": "[#$&@*!]"
     }
   },
   "extras": [

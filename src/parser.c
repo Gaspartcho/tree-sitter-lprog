@@ -293,7 +293,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '.') ADVANCE(12);
       if (lookahead == '\\') SKIP(7);
       if (lookahead == '_') ADVANCE(18);
-      if (('#' <= lookahead && lookahead <= '&') ||
+      if (('!' <= lookahead && lookahead <= '&') ||
           lookahead == '*' ||
           lookahead == '@') ADVANCE(22);
       if (('\t' <= lookahead && lookahead <= '\r') ||
@@ -344,6 +344,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
         '(', 13,
         '\\', 10,
         '_', 18,
+        '!', 22,
         '#', 22,
         '$', 22,
         '&', 22,
