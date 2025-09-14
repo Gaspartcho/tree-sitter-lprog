@@ -36,7 +36,7 @@ module.exports = grammar({
       seq(
         repeat(seq(
           field("variable", $.variable),
-          ","
+          optional(",")
         )),
         field("variable", $.variable)
       ),
@@ -48,7 +48,7 @@ module.exports = grammar({
       "(",
       field("function", $._expression),
       repeat1(seq(
-        ",",
+        optional(","),
         field("arg", $._expression)
       )),
       ")"
@@ -61,6 +61,6 @@ module.exports = grammar({
     variable: $ => /[a-z_]+/,
     macro: $ => /[A-Z_]+/,
     string: $ => /"[^"]*"/,
-    directive: $ => /[#$&@*!]/
+    directive: $ => /[#$&@\*!]+/
   }
 });
