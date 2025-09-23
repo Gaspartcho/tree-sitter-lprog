@@ -297,11 +297,12 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '.') ADVANCE(12);
       if (lookahead == '\\') SKIP(7);
       if (lookahead == '_') ADVANCE(18);
-      if (('!' <= lookahead && lookahead <= '&') ||
-          lookahead == '*' ||
-          lookahead == '@') ADVANCE(22);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(0);
+      if (('!' <= lookahead && lookahead <= '&') ||
+          lookahead == '*' ||
+          lookahead == '?' ||
+          lookahead == '@') ADVANCE(22);
       if (('A' <= lookahead && lookahead <= 'Z')) ADVANCE(20);
       if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(19);
       END_STATE();
@@ -344,23 +345,19 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 8:
       if (eof) ADVANCE(9);
-      ADVANCE_MAP(
-        '"', 3,
-        '%', 15,
-        '(', 13,
-        ')', 14,
-        ',', 11,
-        '\\', 10,
-        '_', 18,
-        '!', 22,
-        '#', 22,
-        '$', 22,
-        '&', 22,
-        '*', 22,
-        '@', 22,
-      );
+      if (lookahead == '"') ADVANCE(3);
+      if (lookahead == '%') ADVANCE(15);
+      if (lookahead == '(') ADVANCE(13);
+      if (lookahead == ')') ADVANCE(14);
+      if (lookahead == ',') ADVANCE(11);
+      if (lookahead == '\\') ADVANCE(10);
+      if (lookahead == '_') ADVANCE(18);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(8);
+      if (('!' <= lookahead && lookahead <= '&') ||
+          lookahead == '*' ||
+          lookahead == '?' ||
+          lookahead == '@') ADVANCE(22);
       if (('A' <= lookahead && lookahead <= 'Z')) ADVANCE(20);
       if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(19);
       END_STATE();
@@ -422,6 +419,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == '$' ||
           lookahead == '&' ||
           lookahead == '*' ||
+          lookahead == '?' ||
           lookahead == '@') ADVANCE(22);
       END_STATE();
     default:
