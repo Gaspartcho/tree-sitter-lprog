@@ -61,6 +61,6 @@ module.exports = grammar({
     variable: $ => /[a-z_]+/,
     macro: $ => /[A-Z_]+/,
     string: $ => /"[^"]*"/,
-    directive: $ => /[#$&@\*!?]+/
+    directive: $ => /[#$&@\*!?\+\-]+/
   }
 });
