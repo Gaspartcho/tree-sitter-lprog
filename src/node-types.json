@@ -12,6 +12,10 @@
             "named": true
           },
           {
+            "type": "dire_loop",
+            "named": true
+          },
+          {
             "type": "directive",
             "named": true
           },
@@ -39,6 +43,10 @@
         "types": [
           {
             "type": "application",
+            "named": true
+          },
+          {
+            "type": "dire_loop",
             "named": true
           },
           {
@@ -72,6 +80,22 @@
     "fields": {}
   },
   {
+    "type": "dire_loop",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "directive",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "function",
     "named": true,
     "fields": {
@@ -81,6 +105,10 @@
         "types": [
           {
             "type": "application",
+            "named": true
+          },
+          {
+            "type": "dire_loop",
             "named": true
           },
           {
@@ -131,6 +159,10 @@
           "named": true
         },
         {
+          "type": "dire_loop",
+          "named": true
+        },
+        {
           "type": "directive",
           "named": true
         },
@@ -174,7 +206,15 @@
     "named": false
   },
   {
+    "type": "[",
+    "named": false
+  },
+  {
     "type": "\\",
+    "named": false
+  },
+  {
+    "type": "]",
     "named": false
   },
   {

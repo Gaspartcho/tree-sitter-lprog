@@ -28,7 +28,8 @@ module.exports = grammar({
       $.variable,
       $.macro,
       $.directive,
-      $.string
+      $.string,
+      $.dire_loop
     ),
 
     function: $ => seq(
@@ -52,6 +53,12 @@ module.exports = grammar({
         field("arg", $._expression)
       )),
       ")"
+    ),
+
+    dire_loop: $ => seq(
+      "[",
+      field("body", $.directive),
+      "]"
     ),
 
     // Taken from the c grammar
