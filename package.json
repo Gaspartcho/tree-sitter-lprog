@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-lprog",
   "version": "0.1.0",
-  "description": "The official tree-sitter grammar for the Lambda Prog (\lprog) language.",
+  "description": "The official tree-sitter grammar for the Lambda Prog (\\lprog) language.",
   "repository": "https://github.com/gaspartcho/tree-sitter-lprog",
   "license": "MIT",
   "author": {
